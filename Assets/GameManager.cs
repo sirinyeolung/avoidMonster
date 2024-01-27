@@ -29,7 +29,11 @@ public class GameManager : MonoBehaviour
 
     private void CreateMonster()
     {
-        Vector3 pos = new Vector3(0, 6, 0);
+        Vector3 pos = Camera.main.ViewportToWorldPoint(new Vector3(UnityEngine.Random.Range(0.0f, 1.0f), 1.1f, 0));
+        pos.z = 0.0f;
         Instantiate(monster,pos,Quaternion.identity);
+        
     }
+
+    
 }
